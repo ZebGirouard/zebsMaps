@@ -12,6 +12,6 @@ var router = require('./config/routes.js');
 app.use("/", router);
 
 //Starting server
-app.listen(process.env.port || 3000, function() {
+app.listen(process.env.PORT || 3000, function() {
 	console.log("Server listening on port " + process.env.port || 3000);
 });
