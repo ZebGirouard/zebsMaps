@@ -2,6 +2,9 @@
 var express = require('express');
 var app = express();
 
+//Serving front-end files
+app.use(express.static('public'));
+
 //Setting up EJS
 app.set('views', './views');
 app.engine('ejs', require('ejs').renderFile);
