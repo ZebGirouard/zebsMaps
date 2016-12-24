@@ -11,4 +11,9 @@ router.get('/usMap', function(req, res) {
 	res.render('usMap');
 });
 
+//World Map
+router.get('/worldMap', function(req, res) {
+	res.render('worldMap');
+});
+
 module.exports = router;
