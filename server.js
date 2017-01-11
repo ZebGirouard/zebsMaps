@@ -13,6 +13,9 @@ app.set('view engine', 'ejs');
 //Setting up Routes
 var router = require('./config/routes.js');
 app.use("/", router);
+app.use(function(req, res){
+   res.sendFile(__dirname + '/public/index.html');
+});
 
 //Starting server
 app.listen(process.env.PORT || 3000, function() {
