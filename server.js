@@ -1,6 +1,7 @@
 //Requiring packages
 var express = require('express');
 var app = express();
+require('dotenv').config();
 
 //Serving front-end files
 app.use(express.static('public'));
@@ -18,6 +19,6 @@ app.use(function(req, res){
 });
 
 //Starting server
-app.listen(process.env.PORT || 3000, function() {
-	console.log("Server listening on port " + process.env.port || 3000);
+app.listen(process.env.PORT, function() {
+	console.log("Server listening on port " + process.env.PORT);
 });

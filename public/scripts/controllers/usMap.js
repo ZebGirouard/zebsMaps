@@ -82,6 +82,14 @@ function USMapController() {
 	};
 
 	$('#map').usmap({
+		// Hover for more info
+	  mouseover: function(event, data) {
+	  	console.log(event);
+	  	console.log(data);
+	  	$('#infoWindow')
+	  		.css({'left':event.pageX, 'top':event.pageY})
+	  		.fadeIn('slow');
+	  },
 	  // The click action
 	  click: function(event, data) {
 	    $('#clicked-state')

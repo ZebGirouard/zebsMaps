@@ -1,1 +1,10 @@
-body{font:normal 75%/1.45 "Josefin Sans", "lucida Grande", "Calibri", "Arial", sans-serif}
+body {
+	font:normal 75%/1.45 "Josefin Sans", "lucida Grande", "Calibri", "Arial", sans-serif
+}
+
+#infoWindow {
+	position: absolute;
+	background-color: #946D01;
+	color: #04D6CC;
+	border-radius: 5px;
+}
