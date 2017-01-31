@@ -19,14 +19,7 @@
       "styles": [
         "styles.css"
       ],
-      "scripts": [
-        "node_modules/core-js/client/shim.min.js",
-        "app/scripts/usMap.js",
-        "node_modules/zone.js/dist/zone.js",
-        "node_modules/systemjs/dist/system.src.js",
-        "systemjs.config.js",
-        "app/scripts/system.import.js"
-      ],
+      "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",

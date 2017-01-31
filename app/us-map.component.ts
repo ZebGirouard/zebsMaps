@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
+import './scripts/jquery.usmap.js';
 import './scripts/usMap.js';
 
 @Component({
