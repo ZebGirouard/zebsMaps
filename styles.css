@@ -1,0 +1,21 @@
+/*h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+
+body {
+	font:normal 75%/1.45 "Josefin Sans", "lucida Grande", "Calibri", "Arial", sans-serif
+}
+*/
+#infoWindow {
+	position: absolute;
+	background-color: #946D01;
+	color: #04D6CC;
+	border-radius: 5px;
+}
+
+.highlight {
+	color: #1111ff;
+	fill: blue;
+}
