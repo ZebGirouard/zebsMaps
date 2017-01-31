@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 
-import './scripts/jquery.usmap.js';
-import './scripts/usMap.js';
+import 'app/scripts/jquery.usmap.js';
+import 'app/scripts/usMap.js';
 
 @Component({
   selector: 'us-map',
-  templateUrl: './us-map.component.html',
+  templateUrl: 'app/us-map.component.html',
 })
 export class UsMapComponent implements OnInit { 
 	name = 'Angular'; 
