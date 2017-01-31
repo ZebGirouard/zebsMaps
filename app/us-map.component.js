@@ -9,8 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-require('app/scripts/jquery.usmap.js');
-require('app/scripts/usMap.js');
+require('./scripts/jquery.usmap.js');
+require('./scripts/usMap.js');
 var UsMapComponent = (function () {
     function UsMapComponent() {
         this.name = 'Angular';
@@ -251,7 +251,7 @@ var UsMapComponent = (function () {
     UsMapComponent = __decorate([
         core_1.Component({
             selector: 'us-map',
-            templateUrl: 'app/us-map.component.html',
+            templateUrl: './us-map.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], UsMapComponent);
