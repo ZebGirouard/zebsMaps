@@ -14,6 +14,58 @@ export class UsMapComponent implements OnInit {
 	mapGray = "#D3D3D3";
 	topOffset = 0;
 	leftOffset = 0;
+	stateNames = {
+		AL: "alabama",
+		AK: "alaska",
+		AR: "arkansas",
+		AZ: "arizona",
+		CA: "california",
+		CO: "colorado",
+		CT: "connecticut",
+		DE: "delaware",
+		FL: "florida",
+		GA: "georgia",
+		HI: "hawaii",
+		IA: "iowa",
+		ID: "idaho",
+		IL: "illinois",
+		IN: "indiana",
+		KS: "kansas",
+		KY: "kentucky",
+		LA: "louisiana",
+		MA: "massachusetts",
+		MD: "maryland",
+		ME: "maine",
+		MI: "michigan",
+		MN: "minnesota",
+		MO: "missouri",
+		MS: "mississippi",
+		MT: "montana",
+		NC: "north-carolina",
+		ND: "north-dakota",
+		NE: "nebraska",
+		NH: "new-hampshire",
+		NJ: "new-jersey",
+		NM: "new-mexico",
+		NV: "nevada",
+		NY: "new-york",
+		OH: "ohio",
+		OK: "oklahoma",
+		OR: "oregon",
+		PA: "pennsylvania",
+		RI: "rhode-island",
+		SC: "south-carolina",
+		SD: "south-dakota",
+		TN: "tennessee",
+		TX: "texas",
+		UT: "utah",
+		VA: "virginia",
+		VT: "vermont",
+		WA: "washington",
+		WV: "west-virginia",
+		WI: "wisconsin",
+		WY: "wyoming"
+	};
 	states = [
 		{
 			id: "AK",
@@ -217,6 +269,7 @@ export class UsMapComponent implements OnInit {
 		}
 
 	];
+
 	showInfoWindow(event:any): void {
 		this.mousedOverState = event.target.id;
 		this.leftOffset = event.pageX;

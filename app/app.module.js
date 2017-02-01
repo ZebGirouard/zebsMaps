@@ -15,6 +15,7 @@ var app_routing_1 = require('./app.routing');
 var home_component_1 = require('./home.component');
 var about_component_1 = require('./about.component');
 var us_map_component_1 = require('./us-map.component');
+var info_window_component_1 = require('./info-window.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,7 +29,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 home_component_1.HomeComponent,
                 about_component_1.AboutComponent,
-                us_map_component_1.UsMapComponent
+                us_map_component_1.UsMapComponent,
+                info_window_component_1.InfoWindowComponent
             ],
             bootstrap: [app_component_1.AppComponent]
         }), 

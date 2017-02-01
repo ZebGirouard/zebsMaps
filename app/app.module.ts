@@ -6,6 +6,7 @@ import { AppRoutingModule }     from './app.routing';
 import { HomeComponent } from './home.component';
 import { AboutComponent } from './about.component';
 import { UsMapComponent } from './us-map.component';
+import { InfoWindowComponent } from './info-window.component';
 
 @NgModule({
   imports:      [ 
@@ -16,7 +17,8 @@ import { UsMapComponent } from './us-map.component';
   	AppComponent,
   	HomeComponent,
   	AboutComponent,
-  	UsMapComponent
+  	UsMapComponent,
+    InfoWindowComponent
   ],
   bootstrap:    [ AppComponent ]
 })
