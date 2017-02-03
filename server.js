@@ -7,5 +7,8 @@ app.get('/woahwoah', function(req, res) {
 });
 
 app.use(express.static(path.join(__dirname, 'client')));
+app.use(function(req, res){
+   res.sendFile(path.join(__dirname, 'client', 'index.html'));
+});
 
 app.listen(process.env.PORT || 3000);
