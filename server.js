@@ -1,10 +1,7 @@
+require('dotenv').config();
 var express = require('express');
 var app = express();
 var path = require('path');
-
-app.get('/woahwoah', function(req, res) {
-	res.send("Woah woah!");
-});
 
 app.use(express.static(path.join(__dirname, 'client')));
 app.use(function(req, res){
