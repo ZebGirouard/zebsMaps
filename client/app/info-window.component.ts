@@ -17,8 +17,8 @@ export class InfoWindowComponent implements OnChanges {
 	text = "More Info"; 
 	url = "";
 	randomVideos = [
-		// "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-		// "https://www.youtube.com/watch?v=9bZkp7q19f0",
+		"https://www.youtube.com/embed/dQw4w9WgXcQ",
+		"https://www.youtube.com/embed/9bZkp7q19f0",
 		"https://www.youtube.com/embed/FzRH3iTQPrk",
 		"https://www.youtube.com/embed/CMNry4PE93Y",
 		"https://www.youtube.com/embed/K1Y6PchDYfw"
