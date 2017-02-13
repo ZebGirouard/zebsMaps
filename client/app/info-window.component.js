@@ -14,23 +14,41 @@ var InfoWindowComponent = (function () {
     function InfoWindowComponent(router) {
         this.router = router;
         this.text = "More Info";
+        this.url = "";
+        this.randomVideos = [
+            // "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+            // "https://www.youtube.com/watch?v=9bZkp7q19f0",
+            "https://www.youtube.com/embed/FzRH3iTQPrk",
+            "https://www.youtube.com/embed/CMNry4PE93Y",
+            "https://www.youtube.com/embed/K1Y6PchDYfw"
+        ];
         this.randomLinks = [
-            "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
             "http://endless.horse/",
             "http://www.zombo.com/",
             "http://www.homestarrunner.com/"
         ];
     }
-    InfoWindowComponent.prototype.getRandomLink = function () {
-        return this.randomLinks[Math.floor(Math.random() * 4)];
+    InfoWindowComponent.prototype.ngOnChanges = function () {
+        this.url = "";
     };
+    InfoWindowComponent.prototype.getRandomLink = function () {
+        return this.randomLinks[Math.floor(Math.random() * this.randomLinks.length)];
+    };
+    ;
     InfoWindowComponent.prototype.goToStateInfo = function () {
         window.open("http://kids.nationalgeographic.com/explore/states/" + this.fullName);
     };
+    ;
     InfoWindowComponent.prototype.goSomewhereFun = function () {
         //this.router.navigateByUrl(this.getRandomLink());
         window.open(this.getRandomLink());
     };
+    ;
+    InfoWindowComponent.prototype.showVideo = function () {
+        console.log("Showing video!");
+        this.url = this.randomVideos[Math.floor(Math.random() * this.randomVideos.length)] + "?autoplay=1";
+    };
+    ;
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)

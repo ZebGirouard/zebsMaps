@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {SafePipe} from './safe-pipe.component';
 
 import { AppComponent }  from './app.component';
 import { AppRoutingModule }     from './app.routing';
@@ -14,7 +15,8 @@ import { InfoWindowComponent } from './info-window.component';
   	AppRoutingModule
   ],
   declarations: [ 
-  	AppComponent,
+  	SafePipe,
+    AppComponent,
   	HomeComponent,
   	AboutComponent,
   	UsMapComponent,
