@@ -8,11 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-require('app/scripts/jquery.usmap.js');
-require('app/scripts/usMap.js');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+// import 'app/scripts/jquery.usmap.js';
+// import 'app/scripts/usMap.js';
+var Observable_1 = require("rxjs/Observable");
+require("rxjs/add/operator/catch");
+require("rxjs/add/operator/map");
 var UsMapComponent = (function () {
-    function UsMapComponent() {
+    function UsMapComponent(http) {
+        this.http = http;
         this.name = 'Angular';
         this.mousedOverState = "";
         this.mapGray = "#D3D3D3";
@@ -278,6 +283,7 @@ var UsMapComponent = (function () {
         this.leftOffset = event.pageX;
         this.topOffset = event.pageY;
     };
+    ;
     UsMapComponent.prototype.getMap = function () {
         console.log("Heyyyy!");
         // $('#map').usmap({
@@ -297,17 +303,48 @@ var UsMapComponent = (function () {
         //   }
         // });
     };
+    ;
     UsMapComponent.prototype.ngOnInit = function () {
         this.getMap();
     };
-    UsMapComponent = __decorate([
-        core_1.Component({
-            selector: 'us-map',
-            templateUrl: 'app/us-map.component.html',
-        }), 
-        __metadata('design:paramtypes', [])
-    ], UsMapComponent);
+    ;
+    UsMapComponent.prototype.fbLogin = function () {
+        //let apiUrl = "http://shakeitspeare.com/api/poem?lines=20";
+        var apiUrl = 'auth/facebook';
+        console.log("fbLogin on front end");
+        console.log(this.http.get(apiUrl));
+        return this.http.get(apiUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    ;
+    UsMapComponent.prototype.extractData = function (res) {
+        var body = res.json();
+        console.log(body);
+        return body.data || {};
+    };
+    UsMapComponent.prototype.handleError = function (error) {
+        // In a real world app, you might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof http_1.Response) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return Observable_1.Observable.throw(errMsg);
+    };
     return UsMapComponent;
 }());
+UsMapComponent = __decorate([
+    core_1.Component({
+        selector: 'us-map',
+        templateUrl: 'app/us-map.component.html',
+    }),
+    __metadata("design:paramtypes", [http_1.Http])
+], UsMapComponent);
 exports.UsMapComponent = UsMapComponent;
 //# sourceMappingURL=us-map.component.js.map

@@ -8,37 +8,39 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
-var safe_pipe_component_1 = require('./safe-pipe.component');
-var app_component_1 = require('./app.component');
-var app_routing_1 = require('./app.routing');
-var home_component_1 = require('./home.component');
-var about_component_1 = require('./about.component');
-var us_map_component_1 = require('./us-map.component');
-var info_window_component_1 = require('./info-window.component');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
+var http_1 = require("@angular/http");
+var safe_pipe_component_1 = require("./safe-pipe.component");
+var app_component_1 = require("./app.component");
+var app_routing_1 = require("./app.routing");
+var home_component_1 = require("./home.component");
+var about_component_1 = require("./about.component");
+var us_map_component_1 = require("./us-map.component");
+var info_window_component_1 = require("./info-window.component");
 var AppModule = (function () {
     function AppModule() {
     }
-    AppModule = __decorate([
-        core_1.NgModule({
-            imports: [
-                platform_browser_1.BrowserModule,
-                app_routing_1.AppRoutingModule
-            ],
-            declarations: [
-                safe_pipe_component_1.SafePipe,
-                app_component_1.AppComponent,
-                home_component_1.HomeComponent,
-                about_component_1.AboutComponent,
-                us_map_component_1.UsMapComponent,
-                info_window_component_1.InfoWindowComponent
-            ],
-            bootstrap: [app_component_1.AppComponent]
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AppModule);
     return AppModule;
 }());
+AppModule = __decorate([
+    core_1.NgModule({
+        imports: [
+            platform_browser_1.BrowserModule,
+            app_routing_1.AppRoutingModule,
+            http_1.HttpModule
+        ],
+        declarations: [
+            safe_pipe_component_1.SafePipe,
+            app_component_1.AppComponent,
+            home_component_1.HomeComponent,
+            about_component_1.AboutComponent,
+            us_map_component_1.UsMapComponent,
+            info_window_component_1.InfoWindowComponent
+        ],
+        bootstrap: [app_component_1.AppComponent]
+    }),
+    __metadata("design:paramtypes", [])
+], AppModule);
 exports.AppModule = AppModule;
 //# sourceMappingURL=app.module.js.map

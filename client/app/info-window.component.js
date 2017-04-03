@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var InfoWindowComponent = (function () {
     function InfoWindowComponent(router) {
         this.router = router;
@@ -49,22 +49,22 @@ var InfoWindowComponent = (function () {
         this.url = this.randomVideos[Math.floor(Math.random() * this.randomVideos.length)] + "?autoplay=1";
     };
     ;
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], InfoWindowComponent.prototype, "selected", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', String)
-    ], InfoWindowComponent.prototype, "fullName", void 0);
-    InfoWindowComponent = __decorate([
-        core_1.Component({
-            selector: 'info-window',
-            templateUrl: 'app/info-window.component.html',
-        }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], InfoWindowComponent);
     return InfoWindowComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], InfoWindowComponent.prototype, "selected", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], InfoWindowComponent.prototype, "fullName", void 0);
+InfoWindowComponent = __decorate([
+    core_1.Component({
+        selector: 'info-window',
+        templateUrl: 'app/info-window.component.html',
+    }),
+    __metadata("design:paramtypes", [router_1.Router])
+], InfoWindowComponent);
 exports.InfoWindowComponent = InfoWindowComponent;
 //# sourceMappingURL=info-window.component.js.map

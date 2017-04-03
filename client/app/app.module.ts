@@ -1,5 +1,6 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import {SafePipe} from './safe-pipe.component';
 
 import { AppComponent }  from './app.component';
@@ -12,7 +13,8 @@ import { InfoWindowComponent } from './info-window.component';
 @NgModule({
   imports:      [ 
   	BrowserModule,
-  	AppRoutingModule
+  	AppRoutingModule,
+    HttpModule
   ],
   declarations: [ 
   	SafePipe,

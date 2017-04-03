@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var platform_browser_1 = require('@angular/platform-browser');
+var core_1 = require("@angular/core");
+var platform_browser_1 = require("@angular/platform-browser");
 var SafePipe = (function () {
     function SafePipe(sanitizer) {
         this.sanitizer = sanitizer;
@@ -17,11 +17,11 @@ var SafePipe = (function () {
     SafePipe.prototype.transform = function (url) {
         return this.sanitizer.bypassSecurityTrustResourceUrl(url);
     };
-    SafePipe = __decorate([
-        core_1.Pipe({ name: 'safe' }), 
-        __metadata('design:paramtypes', [platform_browser_1.DomSanitizer])
-    ], SafePipe);
     return SafePipe;
 }());
+SafePipe = __decorate([
+    core_1.Pipe({ name: 'safe' }),
+    __metadata("design:paramtypes", [platform_browser_1.DomSanitizer])
+], SafePipe);
 exports.SafePipe = SafePipe;
 //# sourceMappingURL=safe-pipe.component.js.map

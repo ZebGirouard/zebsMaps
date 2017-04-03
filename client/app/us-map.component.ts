@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core';
+import { Component }			from '@angular/core';
+import { OnInit }					from '@angular/core';
+import { Http, Response }	from '@angular/http';
 
-import 'app/scripts/jquery.usmap.js';
-import 'app/scripts/usMap.js';
+// import 'app/scripts/jquery.usmap.js';
+// import 'app/scripts/usMap.js';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'us-map',
   templateUrl: 'app/us-map.component.html',
 })
 export class UsMapComponent implements OnInit { 
+
+	constructor (private http: Http) {}
+
 	name = 'Angular'; 
 	mousedOverState = "";
 	mapGray = "#D3D3D3";
@@ -274,7 +282,8 @@ export class UsMapComponent implements OnInit {
 		this.mousedOverState = event.target.id;
 		this.leftOffset = event.pageX;
 		this.topOffset = event.pageY;
-	}
+	};
+
   getMap(): void {
   	console.log("Heyyyy!");
 		// $('#map').usmap({
@@ -293,8 +302,39 @@ export class UsMapComponent implements OnInit {
 		//     window.location.href = photoArray[data.name] || "http://kids.nationalgeographic.com/explore/states/" + stateNames[data.name];
 		//   }
 		// });
-  } 
+  };
+
   ngOnInit(): void {
     this.getMap();
-  } 
+  };
+
+  fbLogin(): Observable<Response> {
+  	//let apiUrl = "http://shakeitspeare.com/api/poem?lines=20";
+  	let apiUrl = 'auth/facebook';
+  	console.log("fbLogin on front end");
+  	console.log(this.http.get(apiUrl));
+		return this.http.get(apiUrl)
+							.map(this.extractData)
+              .catch(this.handleError);
+	};
+
+	private extractData(res: Response) {
+    let body = res.json();
+    console.log(body);
+    return body.data || { };
+  }
+
+  private handleError (error: Response | any) {
+    // In a real world app, you might use a remote logging infrastructure
+    let errMsg: string;
+    if (error instanceof Response) {
+      const body = error.json() || '';
+      const err = body.error || JSON.stringify(body);
+      errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
+    } else {
+      errMsg = error.message ? error.message : error.toString();
+    }
+    console.error(errMsg);
+    return Observable.throw(errMsg);
+  }  
 }
