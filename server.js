@@ -5,6 +5,8 @@ var path = require('path');
 var passport = require('passport');
 app.use(passport.initialize());
 
+//Test comment
+
 require('./config/passport')(passport);
 // =====================================
 // FACEBOOK ROUTES =====================
